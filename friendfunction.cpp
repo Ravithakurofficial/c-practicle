@@ -1,65 +1,38 @@
+#include<iostream.h>
+#include<conio.h>
 
-#include <iostream.h>
-#include <conio.h>
-
-
-class a;
-
-class b
-{
-    int number;
-
-public:
-    b(int x)
-    {
-        number = x;
+class M2;
+class M1{
+    int x;
+    public: 
+    void getvalue(){
+        cout<<"Enter value of x : ";
+        cin>>x;
     }
-    void friend greatest(a a1, b b1);
+    friend void multiply (M1,M2);
 };
-
-class a
-{
-    int number;
-
-public:
-    a(int x)
-    {
-        number = x;
+class M2{
+    int y;
+    public: 
+    void getvalue(){
+        cout<<"Enter value of y : ";
+        cin>>y;
     }
-    void friend greatest(a a1, b b1);
+    friend void multiply (M1,M2)
 };
-
-void greatest(a a1, b b1)
-{
-    if (a1.number > b1.number)
-    {
-        cout << "\nNumber in Class A is greatest i.e. " << a1.number;
-    }
-    else if (a1.number < b1.number)
-    {
-        cout << "\nNumber in Class B is greatest i.e. " << b1.number;
-    }
-    else
-    {
-        cout << "\nNumber in both class equal";
-    }
+void multiply(M1 a, M2 b){
+    int mul;
+    mul=a.x*b.y;
+    cout<<"Multiplication is: "<<mul<<endl;
 }
 
-int main()
-{
-    // clrscr();
-    int num;
-    cout << "\nEnter a number in Class A -";
-    cin >> num;
-    a a1(num);
-
-    cout << "\nEnter a number in Class B -";
-    cin >> num;
-    b b1(num);
-    greatest(a1, b1);
-    cout << "\n";
-    cout << "\nRavi kumar thakur" << endl;\
-    cout<<"IT Shift 2"
+int main(){
+    clrscr
+    M1 a;
+    a.getvalue();
+    M2 b;
+    b.getvalue();
+    multiply(a,b);
     getch();
     return 0;
 }
